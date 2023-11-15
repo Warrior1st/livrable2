@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "795118832163",
+    "firebase_url": "https://login-register-186e8-default-rtdb.firebaseio.com",
+    "project_id": "login-register-186e8",
+    "storage_bucket": "login-register-186e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795118832163:android:af6a5d0f3dcf242cc4bf96",
+        "android_client_info": {
+          "package_name": "com.example.firebaseauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTLHWycrrsV-idLpCKvCXkf8I5JHV-pzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795118832163:android:6e6de1d18644a9fcc4bf96",
+        "android_client_info": {
+          "package_name": "com.example.service_novigrad_livrable2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTLHWycrrsV-idLpCKvCXkf8I5JHV-pzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
