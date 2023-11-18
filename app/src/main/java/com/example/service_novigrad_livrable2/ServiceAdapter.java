@@ -49,12 +49,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
         holder.servicePriceTV.setText("Rs. " + serviceModal.getServicePrice());
         // adding animation to recycler view item on below line.
         setAnimation(holder.itemView, holder.getAdapterPosition());
-        holder.serviceIV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                serviceClickInterface.onServiceClick(holder.getAdapterPosition());
-            }
-        });
+
     }
 
     private void setAnimation(View itemView, int position) {
@@ -73,13 +68,12 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // creating variable for our image view and text view on below line.
-        private ImageView serviceIV;
+
         private TextView serviceTV, servicePriceTV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             // initializing all our variables on below line.
-            serviceIV = itemView.findViewById(R.id.idIVCourse);
             serviceTV = itemView.findViewById(R.id.idTVCOurseName);
             servicePriceTV = itemView.findViewById(R.id.idTVCousePrice);
         }

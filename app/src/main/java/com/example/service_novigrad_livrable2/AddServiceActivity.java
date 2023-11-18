@@ -42,7 +42,7 @@ public class AddServiceActivity extends AppCompatActivity {
         loadingPB = findViewById(R.id.idPBLoading);
         firebaseDatabase = FirebaseDatabase.getInstance();
         // on below line creating our database reference.
-        databaseReference = firebaseDatabase.getReference("Courses");
+        databaseReference = firebaseDatabase.getReference("Services");
         // adding click listener for our add course button.
         addCourseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
