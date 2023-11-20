@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.idBtnLogin);
         newUserTV = findViewById(R.id.idTVNewUser);
         mAuth = FirebaseAuth.getInstance();
+
         fStore = FirebaseFirestore.getInstance();
         loadingPB = findViewById(R.id.idPBLoading);
         //adding click listner for our new user tv.

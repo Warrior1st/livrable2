@@ -5,4 +5,8 @@
         android:id="@+id/idLogOut"
         android:icon="@drawable/ic_logout"
         android:title="Log Out" />
+    <item
+        android:id="@+id/idAccounts"
+        android:title="Comptes"/>
+
 </menu>

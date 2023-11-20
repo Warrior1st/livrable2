@@ -23,7 +23,7 @@ import java.util.Map;
 public class EditServiceActivity extends AppCompatActivity {
 
     //creating variables for our edit text, firebase database, database reference, Service rv modal,progress bar.
-    private TextInputEditText serviceNameEdt, serviceSuccursaleEdt, servicePriceEdt, exigencesEdt, serviceImgEdt, serviceLinkEdt,serviceHoraireEdt;
+    private TextInputEditText serviceNameEdt,  formulaireEdt, documentEdt;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ServiceModal serviceModal;
@@ -39,12 +39,8 @@ public class EditServiceActivity extends AppCompatActivity {
         //initializing all our variables on below line.
         Button addServiceBtn = findViewById(R.id.idBtnAddService);
         serviceNameEdt = findViewById(R.id.idEdtServiceName);
-        serviceSuccursaleEdt = findViewById(R.id.idEdtServiceSuccursales);
-        servicePriceEdt = findViewById(R.id.idEdtServicePrice);
-        exigencesEdt = findViewById(R.id.idEdtServiceExigences);
-        serviceImgEdt = findViewById(R.id.idEdtServiceImageLink);
-        serviceLinkEdt = findViewById(R.id.idEdtServiceLink);
-        serviceHoraireEdt= findViewById(R.id.idEdtServiceHoraire);
+        documentEdt = findViewById(R.id.idEdtServiceDocuments);
+        formulaireEdt = findViewById(R.id.idEdtServiceFormulaire);
         loadingPB = findViewById(R.id.idPBLoading);
         firebaseDatabase = FirebaseDatabase.getInstance();
         //on below line we are getting our modal class on which we have passed.
@@ -54,12 +50,9 @@ public class EditServiceActivity extends AppCompatActivity {
         if (serviceModal != null) {
             //on below line we are setting data to our edit text from our modal class.
             serviceNameEdt.setText(serviceModal.getServiceName());
-            exigencesEdt.setText(serviceModal.getExigences());
-            serviceImgEdt.setText(serviceModal.getServiceImg());
-            serviceLinkEdt.setText(serviceModal.getServiceLink());
-            serviceSuccursaleEdt.setText(serviceModal.getSuccursales());
+            formulaireEdt.setText(serviceModal.getFormulaire());
+            documentEdt.setText(serviceModal.getDocuments());
             serviceID = serviceModal.getServiceId();
-            serviceHoraireEdt.setText(serviceModal.getHoraires());
         }
 
         //on below line we are initialing our database reference and we are adding a child as our Service id.
@@ -72,22 +65,14 @@ public class EditServiceActivity extends AppCompatActivity {
                 loadingPB.setVisibility(View.VISIBLE);
                 //on below line we are getting data from our edit text.
                 String serviceName = serviceNameEdt.getText().toString();
-                String serviceSuccursale = serviceSuccursaleEdt.getText().toString();
-                String servicePrice = servicePriceEdt.getText().toString();
-                String exigences = exigencesEdt.getText().toString();
-                String serviceImg = serviceImgEdt.getText().toString();
-                String serviceLink = serviceLinkEdt.getText().toString();
-                String serviceHoraire = serviceHoraireEdt.getText().toString();
+                String documents = documentEdt.getText().toString();
+                String formulaire = formulaireEdt.getText().toString();
                 //on below line we are creating a map for passing a data using key and value pair.
                 Map<String, Object> map = new HashMap<>();
                 map.put("serviceName", serviceName);
-                map.put("succursales", serviceSuccursale);
-                map.put("servicePrice", servicePrice);
-                map.put("exigences", exigences);
-                map.put("serviceImg", serviceImg);
-                map.put("serviceLink", serviceLink);
+                map.put("documents", documents);
+                map.put("formulaire", formulaire);
                 map.put("serviceId", serviceID);
-                map.put("horaires", serviceHoraire);
 
                 //on below line we are calling a database reference on add value event listener and on data change method
                 databaseReference.addValueEventListener(new ValueEventListener() {

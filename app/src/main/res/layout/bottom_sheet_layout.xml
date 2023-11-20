@@ -13,46 +13,38 @@
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:padding="4dp"
-        android:text="Service Name"
+        android:text="Nom du Service"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <!--text view for displaying Service description-->
     <TextView
-        android:id="@+id/idTVServiceSuccursale"
+        android:id="@+id/idTVServiceFormulaire"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/idTVServiceName"
         android:layout_margin="4dp"
         android:padding="3dp"
-        android:text="Succursale"
+        android:text="Formulaire"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"/>
 
     <!--text view for displaying Service exigences-->
     <TextView
-        android:id="@+id/idTVExigences"
+        android:id="@+id/idTVDocuments"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVServiceSuccursale"
-        android:layout_margin="4dp"
+        android:layout_below="@id/idTVServiceFormulaire"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:padding="3dp"
         android:text="@string/exigences"
-        android:textSize="18sp"
         android:textColor="@color/white"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/idDocument"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/idTVExigences"
-        android:layout_margin="4dp"
-        android:padding="3dp"
-        android:text="@string/documents"
         android:textSize="18sp"
-        android:textColor="@color/white"
         android:textStyle="bold" />
 
 
@@ -62,7 +54,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idDocument"
+        android:layout_below="@id/idTVDocuments"
         android:layout_marginTop="-33dp"
         android:orientation="horizontal"
         android:weightSum="2">

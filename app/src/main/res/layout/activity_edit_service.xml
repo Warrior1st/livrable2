@@ -42,129 +42,21 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for adding a Service price-->
-
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILServicePrice"
+                android:id="@+id/idTILServiceFormulaire"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Entrer le prix du Service"
-                android:padding="5dp"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/purple_200"
-                app:hintTextColor="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtServicePrice"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:ems="10"
-                    android:importantForAutofill="no"
-                    android:inputType="phone"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="14sp"
-                    app:boxStrokeColor="@color/purple_200" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!--edit text for adding a Service best suited for-->
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILServiceExigences"
-                style="@style/LoginTextInputLayoutStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:hint="Entrer les exigences du service"
-                android:textColorHint="@color/white"
-                app:hintTextColor="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtServiceExigences"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:ems="10"
-                    android:importantForAutofill="no"
-                    android:inputType="textImeMultiLine|textMultiLine"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILServiceHoraire"
-                style="@style/LoginTextInputLayoutStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:hint="Entrer l'horaire du Service"
-                android:textColorHint="@color/white"
-                app:hintTextColor="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtServiceHoraire"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:ems="10"
-                    android:importantForAutofill="no"
-                    android:inputType="textImeMultiLine|textMultiLine"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!--edit text for adding a Service image link-->
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILServiceImageLink"
-                style="@style/LoginTextInputLayoutStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:hint="Entrer le lien de l'image du Service"
+                android:hint="Entrer les champs du formulaire separes par des virgules"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtServiceImageLink"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:ems="10"
-                    android:importantForAutofill="no"
-                    android:inputType="textImeMultiLine|textMultiLine"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!--edit text for adding a Service link-->
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILServiceLink"
-                style="@style/LoginTextInputLayoutStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:hint="Entrer le lien du Service"
-                android:padding="5dp"
-                android:textColorHint="@color/white"
-                app:hintTextColor="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtServiceLink"
+                    android:id="@+id/idEdtServiceFormulaire"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
@@ -178,20 +70,20 @@
 
             <!--edit text for adding a Service description-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILServiceSuccursales"
+                android:id="@+id/idTILServiceDocuments"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="77dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Entrer la Succursale du Service"
+                android:hint="Entrer les documents requis separes par des virgules (,)"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtServiceSuccursales"
+                    android:id="@+id/idEdtServiceDocuments"
                     android:layout_width="match_parent"
                     android:layout_height="57dp"
                     android:ems="10"

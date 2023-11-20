@@ -21,7 +21,7 @@ public class AddServiceActivity extends AppCompatActivity {
 
     //creating variables for our button, edit text,firebase database, database refrence, progress bar.
     private Button addServiceBtn;
-    private TextInputEditText ServiceNameEdt, ServiceDescEdt, ServicePriceEdt, bestSuitedEdt, ServiceImgEdt, ServiceLinkEdt, serviceHoraireEdt;
+    private TextInputEditText ServiceNameEdt, formulaireEdt, documentsEdt;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     private ProgressBar loadingPB;
@@ -34,10 +34,8 @@ public class AddServiceActivity extends AppCompatActivity {
         //initializing all our variables.
         addServiceBtn = findViewById(R.id.idBtnAddService);
         ServiceNameEdt = findViewById(R.id.idEdtServiceName);
-        ServiceDescEdt = findViewById(R.id.idEdtServiceSuccursales);
-        bestSuitedEdt = findViewById(R.id.idEdtServiceExigences);
-        ServiceImgEdt = findViewById(R.id.idEdtServiceImageLink);
-        ServiceLinkEdt = findViewById(R.id.idEdtServiceLink);
+        documentsEdt = findViewById(R.id.idEdtServiceDocuments);
+        formulaireEdt = findViewById(R.id.idEdtServiceFormulaire);
 
         loadingPB = findViewById(R.id.idPBLoading);
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -49,15 +47,12 @@ public class AddServiceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 loadingPB.setVisibility(View.VISIBLE);
                 //getting data from our edit text.
-                String ServiceName = ServiceNameEdt.getText().toString();
-                String exigences = ServiceDescEdt.getText().toString();
-                String bestSuited = bestSuitedEdt.getText().toString();
-                String ServiceImg = ServiceImgEdt.getText().toString();
-                String ServiceLink = ServiceLinkEdt.getText().toString();
-                String serviceHoraire = "na";
-                serviceID = ServiceName;
+                String serviceName = ServiceNameEdt.getText().toString();
+                String documents = documentsEdt.getText().toString();
+                String formulaire = formulaireEdt.getText().toString();
+                serviceID = serviceName;
                 //on below line we are passing all data to our modal class.
-                ServiceModal serviceModal = new ServiceModal(serviceID, ServiceName, bestSuited, exigences, ServiceImg, ServiceLink, serviceHoraire);
+                ServiceModal serviceModal = new ServiceModal(serviceID, serviceName, formulaire, documents);
                 //on below line we are calling a add value event to pass data to firebase database.
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override

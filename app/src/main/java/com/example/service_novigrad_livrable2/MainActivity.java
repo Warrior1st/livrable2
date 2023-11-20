@@ -141,7 +141,17 @@ public class MainActivity extends AppCompatActivity implements ServiceAdapter.Se
             startActivity(i);
             this.finish();
             return true;
-        } else {
+        } else if(id == R.id.idAccounts){
+            String url = "https://console.firebase.google.com/";
+
+            // Create an Intent with ACTION_VIEW and the URI of the web link
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+
+            // Start the activity with the Intent
+            startActivity(intent);
+            return true;
+        }
+        else {
             return super.onOptionsItemSelected(item);
         }
     }
@@ -174,12 +184,12 @@ public class MainActivity extends AppCompatActivity implements ServiceAdapter.Se
         //on below line we are creating variables for our text view and image view inside bottom sheet
         //and initialing them with their ids.
         TextView ServiceNameTV = layout.findViewById(R.id.idTVServiceName);
-        TextView ServiceDescTV = layout.findViewById(R.id.idTVServiceSuccursale);
-        TextView suitedForTV = layout.findViewById(R.id.idTVExigences);
+        TextView formulaireTV = layout.findViewById(R.id.idTVServiceFormulaire);
+        TextView documentsTV = layout.findViewById(R.id.idTVDocuments);
         //on below line we are setting data to different views on below line.
         ServiceNameTV.setText(modal.getServiceName());
-        ServiceDescTV.setText(modal.getSuccursales());
-        suitedForTV.setText("Exigences " + modal.getExigences());
+        formulaireTV.setText("Champs du formulaire: " + modal.getFormulaire());
+        documentsTV.setText("Documents: " + modal.getDocuments());
         Button editBtn = layout.findViewById(R.id.idBtnEditService);
 
         //adding on click listener for our edit button.

@@ -44,7 +44,6 @@ public void onBindViewHolder(@NonNull ServiceAdapter.ViewHolder holder, int posi
         //setting data to our recycler view item on below line.
         ServiceModal serviceModal = serviceModalArrayList.get(position);
         holder.serviceTV.setText(serviceModal.getServiceName());
-        Picasso.get().load(serviceModal.getServiceImg()).into(holder.serviceIV);
         //adding animation to recycler view item on below line.
         setAnimation(holder.itemView, position);
         holder.serviceIV.setOnClickListener(new View.OnClickListener() {

@@ -46,7 +46,7 @@
 
             <!--edit text for Service suited for-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILServiceExigences"
+                android:id="@+id/idTILServiceFormulaire"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtServiceExigences"
+                    android:id="@+id/idEdtServiceFormulaire"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
@@ -73,7 +73,7 @@
 
             <!--edit text for Service description-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILServiceSuccursales"
+                android:id="@+id/idTILServiceDocuments"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtServiceSuccursales"
+                    android:id="@+id/idEdtServiceDocuments"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
