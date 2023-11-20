@@ -7,7 +7,6 @@ public class ServiceModal implements Parcelable {
     //creating variables for our different fields.
     private String serviceName;
     private String succursales;
-    private String servicePrice;
     private String exigences;
     private String serviceImg;
     private String serviceLink;
@@ -35,7 +34,6 @@ public class ServiceModal implements Parcelable {
         serviceName = in.readString();
         serviceId = in.readString();
         succursales = in.readString();
-        servicePrice = in.readString();
         exigences = in.readString();
         serviceImg = in.readString();
         serviceLink = in.readString();
@@ -71,14 +69,6 @@ public class ServiceModal implements Parcelable {
         this.succursales = succursales;
     }
 
-    public String getServicePrice() {
-        return servicePrice;
-    }
-
-    public void setServicePrice(String servicePrice) {
-        this.servicePrice = servicePrice;
-    }
-
     public String getExigences() {
         return exigences;
     }
@@ -106,11 +96,10 @@ public class ServiceModal implements Parcelable {
     public String getHoraires(){return horaires;}
     public void setHoraires(String horaires){this.horaires = horaires;}
 
-    public ServiceModal(String serviceId, String serviceName, String succursales, String servicePrice, String exigences, String serviceImg, String serviceLink, String horaires) {
+    public ServiceModal(String serviceId, String serviceName, String succursales, String exigences, String serviceImg, String serviceLink, String horaires) {
         this.serviceName = serviceName;
         this.serviceId = serviceId;
         this.succursales = succursales;
-        this.servicePrice = servicePrice;
         this.exigences = exigences;
         this.serviceImg = serviceImg;
         this.serviceLink = serviceLink;
@@ -127,7 +116,6 @@ public class ServiceModal implements Parcelable {
         dest.writeString(serviceName);
         dest.writeString(serviceId);
         dest.writeString(succursales);
-        dest.writeString(servicePrice);
         dest.writeString(exigences);
         dest.writeString(serviceImg);
         dest.writeString(serviceLink);

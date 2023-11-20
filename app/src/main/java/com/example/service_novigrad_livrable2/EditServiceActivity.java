@@ -54,7 +54,6 @@ public class EditServiceActivity extends AppCompatActivity {
         if (serviceModal != null) {
             //on below line we are setting data to our edit text from our modal class.
             serviceNameEdt.setText(serviceModal.getServiceName());
-            servicePriceEdt.setText(serviceModal.getServicePrice());
             exigencesEdt.setText(serviceModal.getExigences());
             serviceImgEdt.setText(serviceModal.getServiceImg());
             serviceLinkEdt.setText(serviceModal.getServiceLink());

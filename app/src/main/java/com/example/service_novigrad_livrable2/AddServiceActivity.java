@@ -35,11 +35,9 @@ public class AddServiceActivity extends AppCompatActivity {
         addServiceBtn = findViewById(R.id.idBtnAddService);
         ServiceNameEdt = findViewById(R.id.idEdtServiceName);
         ServiceDescEdt = findViewById(R.id.idEdtServiceSuccursales);
-        ServicePriceEdt = findViewById(R.id.idEdtServicePrice);
         bestSuitedEdt = findViewById(R.id.idEdtServiceExigences);
         ServiceImgEdt = findViewById(R.id.idEdtServiceImageLink);
         ServiceLinkEdt = findViewById(R.id.idEdtServiceLink);
-        serviceHoraireEdt = findViewById(R.id.idEdtServiceHoraire);
 
         loadingPB = findViewById(R.id.idPBLoading);
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -52,15 +50,14 @@ public class AddServiceActivity extends AppCompatActivity {
                 loadingPB.setVisibility(View.VISIBLE);
                 //getting data from our edit text.
                 String ServiceName = ServiceNameEdt.getText().toString();
-                String ServiceDesc = ServiceDescEdt.getText().toString();
-                String ServicePrice = ServicePriceEdt.getText().toString();
+                String exigences = ServiceDescEdt.getText().toString();
                 String bestSuited = bestSuitedEdt.getText().toString();
                 String ServiceImg = ServiceImgEdt.getText().toString();
                 String ServiceLink = ServiceLinkEdt.getText().toString();
-                String serviceHoraire = serviceHoraireEdt.getText().toString(); 
+                String serviceHoraire = "na";
                 serviceID = ServiceName;
                 //on below line we are passing all data to our modal class.
-                ServiceModal serviceModal = new ServiceModal(serviceID, ServiceName, ServiceDesc, ServicePrice, bestSuited, ServiceImg, ServiceLink, serviceHoraire);
+                ServiceModal serviceModal = new ServiceModal(serviceID, ServiceName, bestSuited, exigences, ServiceImg, ServiceLink, serviceHoraire);
                 //on below line we are calling a add value event to pass data to firebase database.
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override

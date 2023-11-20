@@ -13,11 +13,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -27,6 +31,14 @@ public class LoginActivity extends AppCompatActivity {
     private TextView newUserTV;
     private FirebaseAuth mAuth;
     private ProgressBar loadingPB;
+
+    FirebaseFirestore fStore;
+
+    public enum Role {
+        ADMIN,
+        EMPLOYE,
+        CLIENT
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.idBtnLogin);
         newUserTV = findViewById(R.id.idTVNewUser);
         mAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
         loadingPB = findViewById(R.id.idPBLoading);
         //adding click listner for our new user tv.
         newUserTV.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +71,9 @@ public class LoginActivity extends AppCompatActivity {
                 //getting data from our edit text on below line.
                 String email = userNameEdt.getText().toString();
                 String password = passwordEdt.getText().toString();
+
+                String role = String.valueOf(Role.CLIENT);
+
                 //on below line validating the text input.
                 if (TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
                     Toast.makeText(LoginActivity.this, "Please enter your credentials..", Toast.LENGTH_SHORT).show();
@@ -69,13 +85,31 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //on below line we are checking if the task is succes or not.
                         if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+
+                            DocumentReference df = fStore.collection("Users").document(user.getUid());
+
                             //on below line we are hiding our progress bar.
                             loadingPB.setVisibility(View.GONE);
                             Toast.makeText(LoginActivity.this, "Login Successful..", Toast.LENGTH_SHORT).show();
-                            //on below line we are opening our mainactivity.
-                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(i);
-                            finish();
+
+                            df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                @Override
+                                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                    if (documentSnapshot.getString("isAdmin") != null) {
+                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        startActivity(intent);
+                                    } else if (documentSnapshot.getString("isEmploye") != null) {
+                                        Intent intent = new Intent(getApplicationContext(), MainActivityEmploye.class);
+                                        startActivity(intent);
+                                    } else {
+                                        Intent intent = new Intent(getApplicationContext(), MainActivityClient.class);
+                                        startActivity(intent);
+                                    }
+                                    finish();
+                                }
+                            });
+
                         } else {
                             //hiding our progress bar and displaying a toast message.
                             loadingPB.setVisibility(View.GONE);
@@ -93,12 +127,17 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         //in on start method checking if the user is already sign in.
         FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
-            //if the user is not null then we are opening a main activity on below line.
-            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(i);
-            this.finish();
-        }
+//        if (user != null) {
+//            //if the user is not null then we are opening a main activity on below line.
+//            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+//            startActivity(i);
+//            this.finish();
+ //       }
 
     }
 }
+
+//on below line we are opening our mainactivity.
+//Intent i = new Intent(LoginActivity.this, MainActivity.class);
+//startActivity(i);
+//finish();

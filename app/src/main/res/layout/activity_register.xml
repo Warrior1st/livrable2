@@ -87,7 +87,35 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="14sp" />
+
     </com.google.android.material.textfield.TextInputLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="User Type"
+            style="@style/LoginTextInputLayoutStyle"
+            android:textColor="@color/white"
+            />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="50dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
 
     <!--button for creating user account.-->
     <Button
@@ -96,7 +124,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/idTILConfirmPassword"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
+
         android:layout_marginEnd="25dp"
         android:background="@drawable/button_back"
         android:text="Register"
@@ -127,5 +156,8 @@
         android:indeterminate="true"
         android:indeterminateDrawable="@drawable/progress_back"
         android:visibility="gone" />
+
+
+
 
 </RelativeLayout>

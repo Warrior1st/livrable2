@@ -18,7 +18,9 @@
             android:id="@+id/idIVService"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:background="@drawable/backimageshape"
+            />
 
         <!--text view for Service name-->
         <TextView
@@ -27,29 +29,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/idIVService"
             android:layout_margin="3dp"
-            android:layout_toStartOf="@id/idTVServicePrice"
-            android:layout_toLeftOf="@id/idTVServicePrice"
             android:padding="4dp"
             android:text="Service Name"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <!--text view for Service price-->
-        <TextView
-            android:id="@+id/idTVServicePrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/idIVService"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="3dp"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Price"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+
 
 
     </RelativeLayout>

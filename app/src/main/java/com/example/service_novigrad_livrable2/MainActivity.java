@@ -182,7 +182,6 @@ public class MainActivity extends AppCompatActivity implements ServiceAdapter.Se
         ServiceNameTV.setText(modal.getServiceName());
         ServiceDescTV.setText(modal.getSuccursales());
         suitedForTV.setText("Exigences " + modal.getExigences());
-        priceTV.setText("$CAD " + modal.getServicePrice());
         Picasso.get().load(modal.getServiceImg()).into(ServiceIV);
         Button viewBtn = layout.findViewById(R.id.idBtnVIewDetails);
         Button editBtn = layout.findViewById(R.id.idBtnEditService);

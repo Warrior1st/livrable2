@@ -44,7 +44,6 @@ public void onBindViewHolder(@NonNull ServiceAdapter.ViewHolder holder, int posi
         //setting data to our recycler view item on below line.
         ServiceModal serviceModal = serviceModalArrayList.get(position);
         holder.serviceTV.setText(serviceModal.getServiceName());
-        holder.servicePriceTV.setText("$CAD " + serviceModal.getServicePrice());
         Picasso.get().load(serviceModal.getServiceImg()).into(holder.serviceIV);
         //adding animation to recycler view item on below line.
         setAnimation(holder.itemView, position);
@@ -73,14 +72,13 @@ public int getItemCount() {
 public static class ViewHolder extends RecyclerView.ViewHolder {
     //creating variable for our image view and text view on below line.
     private ImageView serviceIV;
-    private TextView serviceTV, servicePriceTV;
+    private TextView serviceTV;
 
     public ViewHolder(@NonNull View itemView) {
         super(itemView);
         //initializing all our variables on below line.
         serviceIV = itemView.findViewById(R.id.idIVService);
         serviceTV = itemView.findViewById(R.id.idTVServiceName);
-        servicePriceTV = itemView.findViewById(R.id.idTVServicePrice);
     }
 }
 
