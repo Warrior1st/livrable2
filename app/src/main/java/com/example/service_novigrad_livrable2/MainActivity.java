@@ -32,9 +32,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import org.junit.runner.RunWith;
+
 import java.util.ArrayList;
+//@RunWith(MockitoJUnitRunner.class)
 
 public class MainActivity extends AppCompatActivity implements ServiceAdapter.ServiceClickInterface {
+
+    public FirebaseAuth getFirebaseAuth() {
+
+        return mAuth;
+
+    }
 
     //creating variables for fab, firebase database, progress bar, list, adapter,firebase auth, recycler view and relative layout.
     private FloatingActionButton addServiceFAB;
@@ -45,7 +54,17 @@ public class MainActivity extends AppCompatActivity implements ServiceAdapter.Se
     private ProgressBar loadingPB;
     private ArrayList<ServiceModal> serviceModalArrayList;
     private ServiceAdapter serviceAdapter;
+
+    public ServiceAdapter getServiceAdapter() {
+        return serviceAdapter;
+    }
+
     private RelativeLayout homeRL;
+
+    public ArrayList<ServiceModal> getServiceModalArrayList(){
+        return serviceModalArrayList;
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements ServiceAdapter.Se
         getServices();
     }
 
-    private void getServices() {
+    public void getServices() {
         //on below line clearing our list.
         serviceModalArrayList.clear();
         //on below line we are calling add child event listener method to read the data.
@@ -163,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements ServiceAdapter.Se
         return true;
     }
 
-    private void displayBottomSheet(ServiceModal modal) {
+    public void displayBottomSheet(ServiceModal modal) {
         //on below line we are creating our bottom sheet dialog.
         final BottomSheetDialog bottomSheetTeachersDialog = new BottomSheetDialog(this, R.style.BottomSheetDialogTheme);
         //on below line we are inflating our layout file for our bottom sheet.

@@ -27,15 +27,12 @@
             android:id="@+id/idTVServiceName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/idIVService"
             android:layout_margin="3dp"
             android:padding="4dp"
             android:text="Service Name"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
-
-
 
 
     </RelativeLayout>
