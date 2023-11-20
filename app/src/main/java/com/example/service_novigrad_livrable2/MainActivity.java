@@ -176,14 +176,10 @@ public class MainActivity extends AppCompatActivity implements ServiceAdapter.Se
         TextView ServiceNameTV = layout.findViewById(R.id.idTVServiceName);
         TextView ServiceDescTV = layout.findViewById(R.id.idTVServiceSuccursale);
         TextView suitedForTV = layout.findViewById(R.id.idTVExigences);
-        TextView priceTV = layout.findViewById(R.id.idTVServicePrice);
-        ImageView ServiceIV = layout.findViewById(R.id.idIVService);
         //on below line we are setting data to different views on below line.
         ServiceNameTV.setText(modal.getServiceName());
         ServiceDescTV.setText(modal.getSuccursales());
         suitedForTV.setText("Exigences " + modal.getExigences());
-        Picasso.get().load(modal.getServiceImg()).into(ServiceIV);
-        Button viewBtn = layout.findViewById(R.id.idBtnVIewDetails);
         Button editBtn = layout.findViewById(R.id.idBtnEditService);
 
         //adding on click listener for our edit button.
@@ -198,15 +194,15 @@ public class MainActivity extends AppCompatActivity implements ServiceAdapter.Se
             }
         });
         //adding click listener for our view button on below line.
-        viewBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //on below line we are navigating to browser for displaying Service details from its url
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(modal.getServiceLink()));
-                startActivity(i);
-            }
-        });
+//        //viewBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //on below line we are navigating to browser for displaying Service details from its url
+//                Intent i = new Intent(Intent.ACTION_VIEW);
+//                i.setData(Uri.parse(modal.getServiceLink()));
+//                startActivity(i);
+//            }
+        //});
 
     }
 
