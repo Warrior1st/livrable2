@@ -33,10 +33,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
-//@RunWith(MockitoJUnitRunner.class)
-
 public class MainActivity extends AppCompatActivity implements ServiceAdapter.ServiceClickInterface {
 
     public FirebaseAuth getFirebaseAuth() {
@@ -222,16 +221,6 @@ public class MainActivity extends AppCompatActivity implements ServiceAdapter.Se
                 startActivity(i);
             }
         });
-        //adding click listener for our view button on below line.
-//        //viewBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //on below line we are navigating to browser for displaying Service details from its url
-//                Intent i = new Intent(Intent.ACTION_VIEW);
-//                i.setData(Uri.parse(modal.getServiceLink()));
-//                startActivity(i);
-//            }
-        //});
 
     }
 

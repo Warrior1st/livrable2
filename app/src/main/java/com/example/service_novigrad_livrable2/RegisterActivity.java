@@ -108,7 +108,7 @@ public class RegisterActivity extends AppCompatActivity implements  AdapterView.
                             } else {
                                 //in else condition we are displaying a failure toast message.
                                 loadingPB.setVisibility(View.GONE);
-                                Toast.makeText(RegisterActivity.this, "Fail to register user..", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Enter a valid email, and password must be 6 characters", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
